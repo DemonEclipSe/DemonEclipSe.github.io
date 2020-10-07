@@ -2,6 +2,36 @@
 <html>
 <body>
 
+<script>
+var r = 0,
+g = 0,
+b = 0;
+function bg () {
+	if (r <= 255 && g == 0 && b == 0) {
+		r ++;
+	}
+	if (r == 255 && b == 0 && g <= 255) {
+		g ++;
+	}
+	if (r == 255 && g == 255 && b <= 255) {
+		b ++;
+	}
+	if (b == 255 && g == 255 && r > 0) {
+		r --;
+	}
+	if (r == 0 && b == 255 && g > 0) {
+		g --;
+	}
+	if (r == 0 && g == 0 && b > 0) {
+		b --;
+	}
+	setTimeout(function() {
+		bg();
+	}, 10);
+	document.body.style.backgroundColor = 'rgb('+r+','+g+','+b+')';
+}
+</script>
+	
 <style>
 #shadowBox {
     background-color: rgb(0, 0, 0);
@@ -40,44 +70,7 @@
 <div id="shadowBox">
     <h3 class="rainbow rainbow_text_animated">CodingAxolotl's Project Page</h3>
 </div>
-  
-<style>
-body {
-  background-color: rgba(46,46,46);
-}
-</style>
 
-<script>
-var bgPage = document.body;
-var r = 0,
-g = 0,
-b = 0;
-function bg () {
-	if (r <= 255 && g == 0 && b == 0) {
-		r ++;
-	}
-	if (r == 255 && b == 0 && g <= 255) {
-		g ++;
-	}
-	if (r == 255 && g == 255 && b <= 255) {
-		b ++;
-	}
-	if (b == 255 && g == 255 && r > 0) {
-		r --;
-	}
-	if (r == 0 && b == 255 && g > 0) {
-		g --;
-	}
-	if (r == 0 && g == 0 && b > 0) {
-		b --;
-	}
-	setTimeout(function() {
-		bg();
-	}, 10);
-	bgPage.style.backgroundColor = 'rgb('+r+','+g+','+b+')';
-}
-</script>
-    
 <div id="botId">
     <h3 class="_bot">Below is a link for my Discord Bot!</h3>
 </div>
