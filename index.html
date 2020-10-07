@@ -1,96 +1,128 @@
 <!DOCTYPE html>
 <html>
-<body>
-
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-#shadowBox {
+/* Center the loader */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 0.5s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+#myDiv {
+  display: none;
+  text-align: center;
+}
+</style>
+</head>
+<body onload="myFunction()" style="margin:0;">
+
+<div id="loader"></div>
+
+<div style="display:none;" id="myDiv" class="animate-bottom">
+  <style>
+    #shadowBox {
     background-color: rgb(0, 0, 0);
     /* Fallback color */
     background-color: rgba(0, 0, 0, 0.2);
     /* Black w/opacity/see-through */
     border: 10px solid;
-}
-
-.rainbow {
-    text-align: center;
-    text-decoration: underline;
-    font-size: 32px;
-    font-family: monospace;
-    letter-spacing: 5px;
-}
-.rainbow_text_animated {
-    background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    animation: rainbow_animation 6s ease-in-out infinite;
-    background-size: 400% 100%;
-}
-
-@keyframes rainbow_animation {
-    0%,100% {
-        background-position: 0 0;
     }
 
-    50% {
-        background-position: 100% 0;
+    .rainbow {
+        text-align: center;
+        text-decoration: underline;
+        font-size: 32px;
+        font-family: monospace;
+        letter-spacing: 5px;
+    }
+    .rainbow_text_animated {
+        background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: rainbow_animation 6s ease-in-out infinite;
+        background-size: 400% 100%;
+    }
+
+    @keyframes rainbow_animation {
+        0%,100% {
+            background-position: 0 0;
+        }
+
+        50% {
+            background-position: 100% 0;
    
-</style>
+    </style>
 
-<div id="shadowBox">
-    <h3 class="rainbow rainbow_text_animated">CodingAxolotl's Project Page</h3>
-</div>
+    <div id="shadowBox">
+        <h3 class="rainbow rainbow_text_animated">CodingAxolotl's Project Page</h3>
+    </div>
 
-<div id="botId">
-    <h3 class="_bot">Below is a link for my Discord Bot!</h3>
-</div>
-<a href="https://discord.com/api/oauth2/authorize?client_id=743553802850009139&permissions=75776&scope=bot">Invite my ADB Bot!</a>
+    <div id="botId">
+        <h3 class="_bot">Below is a link for my Discord Bot!</h3>
+    </div>
+    <a href="https://discord.com/api/oauth2/authorize?client_id=743553802850009139&permissions=75776&scope=bot">Invite my ADB Bot!</a>
 
-<div id="JSCode">
-    <h3 class="_JSC">Click it ;)</h3>
-</div>
-<a href="javascript:alert('you listened!');">Click me.</a>
+    <div id="JSCode">
+            <h3 class="_JSC">Click it ;)</h3>
+    </div>
+    <a href="javascript:alert('you listened!');">Click me.</a>
+    </div>
 
-<div class="wrapper"></div>
-<style>
-.wrapper { 
-  height: 100%;
-  width: 100%;
-  left:0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  position: absolute;
-background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
-background-size: 1800% 1800%;
+<script>
+var myVar;
 
--webkit-animation: rainbow 18s ease infinite;
--z-animation: rainbow 18s ease infinite;
--o-animation: rainbow 18s ease infinite;
-  animation: rainbow 18s ease infinite;}
-
-@-webkit-keyframes rainbow {
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
+function myFunction() {
+  myVar = setTimeout(showPage, 7000);
 }
-@-moz-keyframes rainbow {
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
-}
-@-o-keyframes rainbow {
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
-}
-@keyframes rainbow { 
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
-}
-</style>
 
-  
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+</script>
+
 </body>
 </html>
