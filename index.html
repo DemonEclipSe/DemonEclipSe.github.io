@@ -131,16 +131,6 @@
         <h3 id="_bot">This bot is run by Python, And it's primary function is ADB. It can control my phone. That's all.</h3>
     </div>
     <a href="https://discord.com/api/oauth2/authorize?client_id=743553802850009139&permissions=75776&scope=bot" target="_blank">Invite my ADB Bot!</a>
-   
-    <div id="screenSize">
-       <script>
-          function okay() {
-              alert(screen.width + " x " + screen.height);
-          }
-       </script>
-       <h3 id="_size">TEST</h3>
-    </div>
-   <a onclick='alert(screen.width + " x " + screen.height)'>Click me :)</a>
   
     <div id="music">
       <h3 id="_MSC">Generic EDM Song #832938103982</h3>
@@ -160,15 +150,27 @@ function JustATimeout() {
 function showPage() {
   document.getElementById("loader").style.display = "none";
   document.getElementById("myDiv").style.display = "block";
+  okay()
 }
 </script>
 
+<script>
+   function okay() {
+      alert(screen.width + " x " + screen.height);
+   }
+</script>
+
+<script>
+   function okay() {
+      alert(screen.width + " x " + screen.height);
+   }
+</script>
+   
 <style>
   body {
     background-color: rgb(43,43,43);
   }
   #_bot {background-color:rgba(0,0,0,0.3);}
-  #_size {background-color:rgba(0,0,0,0.3);}
   #_MSC {background-color:rgba(0,0,0,0.3);}
 </style>
 </body>
