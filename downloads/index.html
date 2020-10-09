@@ -9,9 +9,15 @@
 * {
    font-family: 'Poppins', sans-serif;
 }
+   
+           
+#myDiv {
+   display: none;
+   text-align: center;
+}
 </style>
 </head>
-<body style="margin:0;">
+<body onload="JustATimeout()" style="margin:0;">
 <style>
     #shadowBox {
     background-color: rgb(0, 0, 0);
@@ -44,7 +50,7 @@
 
         50% {
             background-position: 100% 0;
-   
+
     </style>
   
     <style>
@@ -77,6 +83,19 @@
         <h3 id="_tstpy">A custom type speed tester made in Python, by me!</h3>
     </div>
     <a href="https://discord.com/api/oauth2/authorize?client_id=743553802850009139&permissions=75776&scope=bot" target="_blank">Download it here!</a>
+
+
+<script>
+var myVar;
+
+function JustATimeout() {
+  myVar = setTimeout(showPage, 10);
+}
+
+function showPage() {
+  document.getElementById("myDiv").style.display = "block";
+}
+</script>
 
 <style>
   body {
