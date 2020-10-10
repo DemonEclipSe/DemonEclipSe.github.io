@@ -148,12 +148,13 @@ function JustATimeout() {
 function showPage() {
   document.getElementById("loader").style.display = "none";
   document.getElementById("myDiv").style.display = "block";
+  okay()
 }
 </script>
 
 <script>
    function okay() {
-      alert(screen.width + " x " + screen.height);
+      console.log(screen.width + " x " + screen.height);
    }
 </script>
    
