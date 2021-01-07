@@ -7,7 +7,8 @@ function checkSYS() {
 var o = platform.os;
 var o = o.toString();
 var w = o.includes("Windows");
-if (w == false) {
+var w2 = platform.manufacturer;
+if (w2 === null) {
   var m = platform.manufacturer;
   var m = m.toString();
   var x = m.includes("Microsoft Xbox One");
