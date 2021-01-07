@@ -1,0 +1,16 @@
+<script src="platform.js"></script>
+
+<script>
+var os = platform.os;
+var w = os.includes("Windows");
+var x = os.includes("Microsoft Xbox One");
+if (w == true) {
+  alert("You're on Windows... Xbox ONLY");
+  document.getElementById("demo").innerHTML = "You are on Windows. This is an Xbox One ONLY Exploit.";
+}
+else if (x == true) {
+  alert("Looks like you are on an Xbox One.");
+  document.getElementById("demo").innerHTML = "You are on Xbox. The exploit is being found as you read this...";
+}
+
+<p id="demo"></p>
