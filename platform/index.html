@@ -1,7 +1,7 @@
 <script src="platform.js"></script>
 
 <body>
-
+<!-- http://api.ipify.org/?format=text -->
 <script>
 function checkSYS() {
 var o = platform.os;
@@ -11,18 +11,36 @@ var p = platform.product;
 if (p === null) {
   alert("You're not on Xbox...");
   document.getElementById("demo").innerHTML = "You are on " + o + ". This is an Xbox One ONLY Exploit.";
+  return "Windows";
 }
 var p = p.toString();
 if (p === "Xbox One") {
   alert("Looks like you are on an Xbox One.");
   document.getElementById("demo").innerHTML = "You are on Xbox. The exploit is being found as you read this...";
+  return "Xbox";
 }
 else if (p !== "Xbox One") {
   alert("You're not on Xbox...");
   document.getElementById("demo").innerHTML = "You are on " + o + ". This is an Xbox One ONLY Exploit.";
+  return "Not Xbox";
 }
+};
+function ip() {
+const s = new checkSYS();
+if (s === "Xbox") {
+  const h = new XMLHttpRequest();
+  const u ='http://api.ipify.org/?format=text';
+  h.open("GET", u);
+  h.send();
+  h.onreadystatechange = (e) => {
+    alert(h.responseText)
+  }
+} else {
+  alert("Exploit will not work on " + s + ".")
 };
 </script>
 <br><a onclick="checkSYS()">Check System</a><br>
+<strong>If you click "Check Exploit" It should grab your IP from system cache. (using extended privileges)</strong>
+<br><a onclick="ip()">Check Exploit</a><br>
 <p id="demo"></p>
 </body>
