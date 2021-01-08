@@ -8,14 +8,13 @@ var o = platform.os;
 var o = o.toString();
 var w = o.includes("Windows");
 var p = platform.product;
-var p = p.toString();
-if (p === true) {
-  alert("Looks like you are on an Xbox One.");
-  document.getElementById("demo").innerHTML = "You are on Xbox. The exploit is being found as you read this...";
-}
 if (p === null) {
   alert("You're not on Xbox...");
   document.getElementById("demo").innerHTML = "You are on " + o + ". This is an Xbox One ONLY Exploit.";
+}
+if (p !== null) {
+  alert("Looks like you are on an Xbox One.");
+  document.getElementById("demo").innerHTML = "You are on Xbox. The exploit is being found as you read this...";
 }
 };
 </script>
