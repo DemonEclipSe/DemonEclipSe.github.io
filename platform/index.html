@@ -8,7 +8,7 @@ var o = platform.os;
 var o = o.toString();
 var w = o.includes("Windows");
 var p = platform.product;
-if (p === null) {
+if (p !== null and p.toString() !== "Xbox One") {
   alert("You're not on Xbox...");
   document.getElementById("demo").innerHTML = "You are on " + o + ". This is an Xbox One ONLY Exploit.";
 }
