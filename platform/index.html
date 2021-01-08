@@ -6,16 +6,16 @@
 function checkSYS() {
 var o = platform.os;
 var o = o.toString();
-var w = o.includes("(Windows");
-if (w === true) {
+var w = o.includes("Windows");
+var p = platform.product;
+var p = p.toString();
+if (p === true) {
   alert("Looks like you are on an Xbox One.");
   document.getElementById("demo").innerHTML = "You are on Xbox. The exploit is being found as you read this...";
 }
-if (w === false) {
-  alert(o)
-  alert(platform.product)
-  alert("You're on Windows... Xbox ONLY");
-  document.getElementById("demo").innerHTML = "You are on Windows. This is an Xbox One ONLY Exploit.";
+if (p === null) {
+  alert("You're not on Xbox...");
+  document.getElementById("demo").innerHTML = "You are on " + o + ". This is an Xbox One ONLY Exploit.";
 }
 };
 </script>
