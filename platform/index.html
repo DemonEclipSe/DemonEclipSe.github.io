@@ -12,7 +12,7 @@ if (p === null) {
   alert("You're not on Xbox...");
   document.getElementById("demo").innerHTML = "You are on " + o + ". This is an Xbox One ONLY Exploit.";
 }
-if (p !== null) {
+if (p.toString() === "Xbox One") {
   alert("Looks like you are on an Xbox One.");
   document.getElementById("demo").innerHTML = "You are on Xbox. The exploit is being found as you read this...";
 }
