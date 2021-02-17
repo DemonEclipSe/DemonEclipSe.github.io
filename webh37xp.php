@@ -1,66 +1,22 @@
 <?php
 
-class Curl {
-	
-	public function get($url){
+$url = $_DELETE['url'];
 
-		$ch = curl_init($url);                                                                      
-		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");                                                                 
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);                                                                                                                    
-		$result = curl_exec($ch);
-		return $result;
-	}
+$curl = curl_init($url);
+curl_setopt($curl, CURLOPT_URL, $url);
+curl_setopt($curl, CURLOPT_DELETE, true);
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
-	public function post($url, $data_string){
+$headers = array(
+   "Accept: */*",
+   "Authorization: Bearer mt0dgHmLJMVQhvjpNXDyA83vA_PxH23Y",
+);
+curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 
-		$ch = curl_init($url);                                                                      
-		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST"); 
-		curl_setopt($ch, CURLOPT_FAILONERROR, true);                                                                    
-		curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);                                                                  
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
-		curl_setopt($ch, CURLOPT_HTTPHEADER, array(                                                                          
-		    'Content-Type: application/json',                                                                                
-		    'Content-Length: ' . strlen($data_string))                                                                       
-		);                                                                                                                   
-		 
-		$result = curl_exec($ch);
-		return $result;
-	}
+$resp = curl_exec($curl);
+curl_close($curl);
+var_dump($resp);
 
-	public function put($url, $data_string){
-
-		$ch = curl_init($url);                                                                      
-		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT"); 
-		curl_setopt($ch, CURLOPT_FAILONERROR, true);                                                                    
-		curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);                                                                  
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
-		curl_setopt($ch, CURLOPT_HTTPHEADER, array(                                                                          
-		    'Content-Type: application/json',                                                                                
-		    'Content-Length: ' . strlen($data_string))                                                                       
-		);                                                                                                                   
-		 
-		$result = curl_exec($ch);
-		return $result;
-	}
-
-	public function delete($url, $data_string){
-
-		$ch = curl_init($url);                                                                      
-		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE"); 
-		curl_setopt($ch, CURLOPT_FAILONERROR, true);                                                                    
-		curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);                                                                  
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
-		curl_setopt($ch, CURLOPT_HTTPHEADER, array(                                                                          
-		    'Content-Type: application/json',                                                                                
-		    'Content-Length: ' . strlen($data_string))                                                                       
-		);                                                                                                                   
-		 
-		$result = curl_exec($ch);
-		return $result;
-	}
-
-}
-
-$curl = new Curl;
-
+echo"Webhook Deleted!"
 ?>
