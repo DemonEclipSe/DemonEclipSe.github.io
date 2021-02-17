@@ -6,6 +6,8 @@ $(document).ready(function(){
 	$("#delWH").click(function() {
 		$.ajax({
 			url: "webh37xp.php",
+			type: "POST",
+			data: $("#beep").serialize(),
 			beforesend: function(){
 				$("deleted_text").html("<br /><center><img src='https://i.imgur.com/vNB9tBV.gif' /></center>");
     			},
