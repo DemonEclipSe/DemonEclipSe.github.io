@@ -3,20 +3,16 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-  $("#delWH").click(function(){
-  	$.ajax({
-    url: $("input").value,
-    type: 'DELETE',
-    beforeSend: function() {
-		$('#deleted_text').html("<br/><img src='https://i.imgur.com/vNB9tBV.gif'/>");
-	},
-    success: function(result) {
-        $("#deleted_text").html("<b style='color:DodgerBlue'>Webhook Deleted!</b>");
-    },
-    error: function(result,msg,error) {
-        $("#deleted_text").html("<h style='color:Tomato'> An error occured: "+ result.text +"</h>");
+  $("#delWH").click(function() {
+	  var message = $('#beep').value();
+		$.ajax({
+    url: "webh37xp.php",
+    data: {url: message},
+    success: function(html){
+        $('#deleted_text').html(html);
     }
-});
+  });
+		
 });
 });
 </script>
@@ -36,7 +32,7 @@ function showPage() {
 <div id="myDiv">
 	<div id="P">
       <h3 id="_PG">Webhook Deleter</h3>
-        <input placeholder="Webhook URL"><input>
+        <input placeholder="Webhook URL" id="beep"><input>
         <a id="delWH">Delete Webhook</a>
     </div>
 	<style>
