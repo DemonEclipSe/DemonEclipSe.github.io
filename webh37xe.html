@@ -8,8 +8,14 @@ $(document).ready(function(){
 		$.ajax({
     url: "webh37xp.php",
     data: {url: message},
+    beforesend: function(){
+	$("deleted_text").html("<br /><center><img src='https://i.imgur.com/vNB9tBV.gif' /></center>");
+    },
     success: function(html){
         $('#deleted_text').html(html);
+    },
+    failure: function(){
+        $('#deleted_text').html("<h style='color:Tomato'>Webhook either does not exist or has been deleted.</h>");
     }
   });
 		
