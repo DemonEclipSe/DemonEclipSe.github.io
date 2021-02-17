@@ -14,7 +14,7 @@ $(document).ready(function(){
         $("#deleted_text").html("<b style='color:DodgerBlue'>Webhook Deleted!</b>");
     },
     error: function(result,msg,error) {
-        $("#deleted_text").html("<b style='color:Tomato'> An error occured: "+ msg +"</b>");
+        $("#deleted_text").html("<h style='color:Tomato'> An error occured: "+ result +"</h>");
     }
 });
 });
