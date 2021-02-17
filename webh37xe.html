@@ -13,8 +13,8 @@ $(document).ready(function(){
     success: function(result) {
         $("#deleted_text").html("<b style='color:DodgerBlue'>Webhook Deleted!</b>");
     },
-    failure: function(result,msg,error) {
-        $("#deleted_text").html("<b style='color:Tomato'>"+ error +"</b>");
+    error: function(result,msg,error) {
+        $("#deleted_text").html("<b style='color:Tomato'> An error occured: "+ msg +"</b>");
     }
 });
 });
