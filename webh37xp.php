@@ -1,22 +1,8 @@
 <?php
 
-$url = $_DELETE['url'];
+$url = $_POST['url'];
 
-$curl = curl_init($url);
-curl_setopt($curl, CURLOPT_URL, $url);
-curl_setopt($curl, CURLOPT_DELETE, true);
-curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+list($main, $api, $webhook, $id, $key) = explode("/", $url);
 
-$headers = array(
-   "Accept: */*",
-   "Authorization: Bearer mt0dgHmLJMVQhvjpNXDyA83vA_PxH23Y",
-);
-curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
-curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-
-$resp = curl_exec($curl);
-curl_close($curl);
-var_dump($resp);
-
-echo"Webhook Deleted!"
+echo "Site: " . $main . "\nID: " . $id . "\nKey: " . $key;
 ?>
