@@ -1,0 +1,68 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#delWH").click(function(){
+  	$.ajax({
+    url: $("input").value,
+    type: 'DELETE',
+    beforeSend: function() {
+		$('#deleted_text').html("<br/><img src='https://i.imgur.com/vNB9tBV.gif'/>");
+	},
+    success: function(result) {
+        $("#deleted_text").html("<b style='color:DodgerBlue'>Webhook Deleted!</b>");
+    },
+    error: function(result,msg,error) {
+        $("#deleted_text").html("<b style='color:Tomato'>"+ error +"</b>");
+    }
+});
+});
+});
+</script>
+<script>
+var myVar;
+
+function JustATimeout() {
+  myVar = setTimeout(showPage, 100);
+}
+
+function showPage() {
+  document.getElementById("myDiv").style.display = "block";
+}
+</script>
+</head>
+<body onload="JustATimeout()">
+<div id="myDiv">
+	<div id="P">
+      <h3 id="_PG">Webhook Deleter</h3>
+        <input placeholder="Webhook URL"><input>
+        <a id="delWH">Delete Webhook</a>
+    </div>
+	<style>
+      a:link, a:visited {
+          background-color: rgb(43,43,43);
+          color: rgb(25,175,175);
+          border: 2px solid rgb(125,125,125);
+          padding: 10px 20px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+        }
+
+      a:hover, a:active {
+          background-color: rgb(75,75,75);
+          color: rgb(175,25,25);
+      }
+      #_PG {background-color:rgba(0,0,0,0.3);}
+      #myDiv {
+  		display: none;
+  		text-align: center;
+			}
+    </style>
+
+	<h1 id="deleted_text"></h1>
+	</div>
+
+</body>
+</html>
