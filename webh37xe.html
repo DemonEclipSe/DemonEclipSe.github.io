@@ -3,23 +3,20 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-  $("#delWH").click(function() {
-	  var message = $('#beep').val();
+	$("#delWH").click(function() {
 		$.ajax({
-    url: "webh37xp.php",
-    data: {url: message},
-    beforesend: function(){
-	$("deleted_text").html("<br /><center><img src='https://i.imgur.com/vNB9tBV.gif' /></center>");
-    },
-    success: function(html){
-        $('#deleted_text').html(html);
-    },
-    failure: function(){
-        $('#deleted_text').html("<h style='color:Tomato'>Webhook either does not exist or has been deleted.</h>");
-    }
-  });
-		
-});
+			url: "webh37xp.php",
+			beforesend: function(){
+				$("deleted_text").html("<br /><center><img src='https://i.imgur.com/vNB9tBV.gif' /></center>");
+    			},
+    			success: function(html){
+        			$('#deleted_text').html(html);
+    			},
+    			failure: function(){
+        			$('#deleted_text').html("<h style='color:Tomato'>Not a valid discord webhook url</h>");
+    			}
+		});	
+	});
 });
 </script>
 <script>
@@ -37,9 +34,9 @@ function showPage() {
 <body onload="JustATimeout()">
 <div id="myDiv">
 	<div id="P">
-      <h3 id="_PG">Webhook Deleter</h3>
+      <h3 id="_PG">Webhook URL Splitter</h3>
         <input placeholder="Webhook URL" id="beep"><input>
-        <a id="delWH">Delete Webhook</a>
+        <a id="delWH">Split</a>
     </div>
 	<style>
       a:link, a:visited {
