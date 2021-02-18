@@ -1,8 +1,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 function ip() {
-const h = new XMLHttpRequest();
-const u ='http://api.ipify.org/?format=text';
+const h = new XMLHttpsRequest();
+const u ='https://api.ipify.org/?format=text';
 h.open("GET", u);
 h.send();
 h.onreadystatechange = (e) => {
