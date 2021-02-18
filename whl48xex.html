@@ -1,19 +1,7 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-function ip() {
-  $.ajax({
-			url: "https://api.ipify.org/?format=text",
-			type: "GET",
-    	success: function(h){
-        	$("#ip").text(h);
-    	}
-	});	
-};
-</script>
+<script type="application/javascript">
+  function getIP(json) {
+    document.write(json.ip);
+  }
 </script>
 
-<body onload="ip()">
-
-<h id="ip"></h>
-
-</body>
+<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
